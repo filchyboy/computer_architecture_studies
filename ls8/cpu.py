@@ -64,7 +64,7 @@ class CPU:
     def ram_write(self, value, addr):
         self.ram[addr] = value
 
-    def load(self):
+    def load(self, filename):
         """Load a program into memory."""
 
         address = 0
@@ -81,8 +81,11 @@ class CPU:
         #     0b00000001, # HLT
         # ]
 
+        f = open(filename)
+        program = [line.split("#")[0] for line in f.read().split("\n") if line.split('#')[0] != '']    
+
         for instruction in program:
-            self.ram[address] = instruction
+            self.ram[address] = int(instruction, 2)
             address += 1
 
 
