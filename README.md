@@ -8,7 +8,7 @@
 
 ### Day 1: Get `print8.ls8` running
 
-- [ ] Inventory what is here
+- [X] Inventory what is here
   * cpu.py - CPU class
   * ls8.py - loads and runs CPU
   * examples / 
